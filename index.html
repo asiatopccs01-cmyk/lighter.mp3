@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Lighter - Jelly Roll & Carin Leon</title>
+    <style>
+        body { background: #000; color: #fff; display: flex; align-items: center; justify-content: center; height: 100vh; font-family: sans-serif; }
+        .play-hint { border: 1px solid #d4af37; padding: 20px; border-radius: 10px; cursor: pointer; }
+    </style>
+</head>
+<body onclick="playMusic()">
+    <div class="play-hint" id="status">点击屏幕开启音乐</div>
+    
+    <audio id="bgm" loop>
+        <source src="lighter.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        function playMusic() {
+            var audio = document.getElementById('bgm');
+            audio.play();
+            document.getElementById('status').innerText = "🎶 正在播放: Lighter";
+        }
+    </script>
+</body>
+</html>
