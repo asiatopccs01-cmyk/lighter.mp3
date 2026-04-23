@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIFA 2026 倒计时测试</title>
+    <style>
+        /* 这部分就是 CSS，负责让图片和数字变漂亮 */
+        body { background-color: #111; display: flex; justify-content: center; padding-top: 50px; margin: 0; }
+
+        #fifa-banner-container {
+            width: 100%;
+            max-width: 900px; /* 电脑端宽度 */
+            position: relative; /* 核心：为了让数字能“浮”在图片上 */
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+        }
+
+        .replica-banner-img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* 重点：这部分让数字精准定位在图片右侧的方框位置 */
+        .timer-overlay {
+            position: absolute;
+            top: 50%;
+            right: 4%; /* 距离右边的距离 */
+            transform: translateY(-28%); /* 垂直居中微调 */
+            display: flex;
+            gap: 1.8vw; /* 间距随屏幕缩放 */
+            pointer-events: none;
+        }
+
+        .time-item {
+            width: 7vw; 
+            max-width: 80px;
+            text-align: center;
+        }
+
+        .time-val {
+            font-family: 'Arial Black', Gadget, sans-serif;
+            font-size: 3.5vw; /* 电脑端字体大小 */
+            font-weight: 900;
+            color: white;
+            line-height: 1;
+            display: block;
+        }
+
+        /* 针对电脑端的大屏幕微调字体 */
+        @media (min-width: 900px) {
+            .time-val { font-size: 45px; }
+            .timer-overlay { gap: 18px; }
+        }
+
+        /* 秒数变黄色，复刻原图效果 */
+        #p-s { color: #facc15; }
+
+        /* 手机端自动缩小，防止数字乱跑 */
+        @media (max-width: 600px) {
+            .timer-overlay { right: 3%; transform: translateY(-30%); gap: 8px; }
+            .time-item { width: 35px; }
+            .time-val { font-size: 18px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="fifa-banner-container">
+        <img src="wc-banner.png" alt="FIFA 2026" class="replica-banner-img">
+        
+        <div class="timer-overlay">
+            <div class="time-item"><span id="p-d" class="time-val">00</span></div>
+            <div class="time-item"><span id="p-h" class="time-val">00</span></div>
+            <div class="time-item"><span id="p-m" class="time-val">00</span></div>
+            <div class="time-item"><span id="p-s" class="time-val">00</span></div>
+        </div>
+    </div>
+
+    <script>
+        const target = new Date("June 11, 2026 00:00:00").getTime();
+        function update() {
+            const now = new Date().getTime();
+            const diff = target - now;
+            if (diff <= 0) return;
+
+            document.getElementById("p-d").innerText = Math.floor(diff / 86400000);
+            document.getElementById("p-h").innerText = String(Math.floor((diff % 86400000) / 3600000)).padStart(2, '0');
+            document.getElementById("p-m").innerText = String(Math.floor((diff % 3600000) / 60000)).padStart(2, '0');
+            document.getElementById("p-s").innerText = String(Math.floor((diff % 60000) / 1000)).padStart(2, '0');
+        }
+        setInterval(update, 1000);
+        update();
+    </script>
+
+</body>
+</html>
