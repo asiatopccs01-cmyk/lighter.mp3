@@ -1,0 +1,15 @@
+/* A luminous optical portal before the shared 3D scene is revealed. */
+#arrival-loader{position:fixed;inset:0;z-index:1000;background:#020305;display:grid;place-items:center;overflow:hidden;opacity:1;isolation:isolate;transition:opacity .85s ease,visibility .85s;touch-action:none}
+#arrival-loader[hidden]{display:none}
+.is-arriving{overflow:hidden!important}
+.arrival-portal{position:absolute;width:min(110vw,1420px);height:min(90svh,850px);overflow:visible;transition:transform 1.2s cubic-bezier(.2,.7,.1,1),filter .9s;filter:drop-shadow(0 0 8px #4a91c914)}
+.arrival-contours{opacity:.8}
+.arrival-progress{position:relative;z-index:2;display:flex;align-items:baseline;gap:2px;font:11px/1 'Courier New',monospace;letter-spacing:-.03em;color:#a0cddd;font-weight:400;transition:opacity .35s}
+.arrival-percent-sign{font-size:6px;color:#78a9bc}
+.arrival-label{position:absolute;bottom:11%;margin:0;font:8px/1.5 'Courier New',monospace;letter-spacing:.17em;color:#577080;transition:opacity .4s}
+.arrival-label span{margin:0 12px;color:#796591}
+#arrival-loader.is-revealing{opacity:0;visibility:hidden;pointer-events:none}
+#arrival-loader.is-revealing .arrival-portal{transform:scale(2.4);filter:blur(5px)}
+#arrival-loader.is-revealing .arrival-progress,#arrival-loader.is-revealing .arrival-label{opacity:0}
+@media(max-width:700px){.arrival-portal{width:190vw;height:85svh}.arrival-progress{font-size:10px}.arrival-label{font-size:6px;letter-spacing:.07em;bottom:15%}.arrival-label span{margin:0 8px}}
+@media(prefers-reduced-motion:reduce){#arrival-loader{transition:opacity .1s}.arrival-portal{transition:none}#arrival-loader.is-revealing .arrival-portal{transform:none;filter:none}}

@@ -1,0 +1,233 @@
+/* Final typography: dimensional headings, comfortable reading, quieter metadata. */
+.is-astrology{font-weight:500}
+.is-astrology .project-content{scroll-padding-block:90px 28px}
+.is-astrology .header .brand{font-weight:650;font-size:15px}
+.is-astrology .header .nav-link,.is-astrology .about-trigger{font-size:11px;font-weight:600}
+.is-astrology .cover-kicker{font-size:10px;letter-spacing:.1em}
+.is-astrology .cover-copy{font-size:13px;font-weight:500;color:#c1ccdf}
+.is-astrology .journey-opening h2 .astro-heading-subtitle{font-size:clamp(27px,2.8vw,40px);font-weight:750;text-shadow:0 1px #aa8b5d,0 3px #554837,0 7px 20px #030712}
+.is-astrology .astro-home-picker{width:min(480px,90vw)}
+.is-astrology .astro-home-picker select{font-size:13px!important;font-weight:550!important}
+.is-astrology .astro-home-picker button{font-size:12px;font-weight:650}
+.is-astrology .cover-enter,.is-astrology .cover-actions .cover-tour{font-size:11px;font-weight:600}
+.is-astrology .cover-coordinate{font-size:8px}
+.is-astrology .journey-ending h2{font-weight:700;filter:drop-shadow(0 3px 0 #1c263e) drop-shadow(0 9px 18px #030610)}
+.is-astrology .screen-copy h2,.is-astrology .chapter-screen .screen-copy h2{font-weight:700;font-size:clamp(58px,6.6vw,102px);letter-spacing:-.025em;line-height:1.08;filter:drop-shadow(1px 2px 0 #17213c) drop-shadow(0 6px 12px #01050c)}
+.is-astrology .screen-copy p{font-size:18px;font-weight:650}
+.is-astrology .chapter-screen .screen-copy{top:44%}
+.is-astrology .screen-imprint{font-size:10px;font-weight:550}
+.is-astrology .screen-caption{font-size:13px;font-weight:500;line-height:1.9;color:#c9d5e2}
+.is-astrology .screen-serial{font-size:9px}
+.is-astrology .world-choice>span{font-size:11px;font-weight:600}
+.is-astrology .world-selector:before{font-size:8px}
+.is-astrology .gallery-guidance,.is-astrology .hero[data-phase="arrival"] .gallery-guidance{font-size:9px}
+.is-astrology .gallery-story-link{font-size:11px;font-weight:600}
+.is-astrology .music-track>span{font-size:12px;font-weight:600}
+.is-astrology .music-track small{font-size:8px}
+.is-astrology .music-state{font-size:8px}
+.is-astrology .hero-bottom .sky-toggle{font-size:10px}
+.is-astrology .hero[data-phase="arrival"] .world-selector,.is-astrology .hero[data-phase="arrival"] .world-controls,.is-astrology .hero[data-phase="arrival"] .gallery-story-link,
+.is-astrology .hero[data-phase="horizon"] .world-selector,.is-astrology .hero[data-phase="horizon"] .world-controls,.is-astrology .hero[data-phase="horizon"] .gallery-story-link{display:none}
+
+.is-astrology #project-title{font-weight:700;font-size:clamp(44px,5.2vw,76px);letter-spacing:-.045em;filter:drop-shadow(1px 2px 0 #172039) drop-shadow(0 6px 10px #040813)}
+.is-astrology #project-dialog[data-sign="sagittarius"] #project-title{font-size:clamp(32px,4vw,57px)}
+.is-astrology .project-subtitle{font-size:16px;font-weight:650;line-height:1.7}
+.is-astrology .detail-lead{font-size:27px;font-weight:650;line-height:1.7}
+.is-astrology .project-intro{font-size:14px;font-weight:500;line-height:2.1;color:#b3c3d4}
+.is-astrology .project-kicker{font-size:10px}
+.is-astrology .detail-facts span{font-size:9px}
+.is-astrology .detail-facts strong{font-size:13px;font-weight:600}
+.is-astrology .detail-visual-caption{font-size:11px}
+.is-astrology .detail-visual-tag,.is-astrology .detail-visual-coordinate{font-size:8px}
+.is-astrology .detail-section-heading h2{font-weight:650;font-size:clamp(29px,3.3vw,43px);text-shadow:0 2px 0 #1b263b,0 6px 16px #040914}
+.is-astrology .detail-section-heading>p{font-size:10px}
+.is-astrology .detail-section-heading>span{font-size:13px;color:#a6bacd}
+.is-astrology .astro-sign-card h3{font-size:27px;font-weight:650;text-shadow:0 2px #202d40}
+.is-astrology .astro-sign-card p{font-size:13px;font-weight:500;line-height:2.1}
+.is-astrology .astro-sign-dates,.is-astrology .astro-sign-english{font-size:8px}
+.is-astrology .astro-mini-tags{font-size:10px}
+.is-astrology .is-compact h3{font-size:21px}
+.is-astrology .astro-element-note p{font-size:23px;font-weight:600}
+.is-astrology .astro-element-note>span{font-size:9px}
+.is-astrology .astro-quarters h3{font-size:20px;font-weight:650}
+.is-astrology .astro-quarters p{font-size:13px;font-weight:500;line-height:2.1;color:#a8bad0}
+.is-astrology .astro-quarters article>span{font-size:9px}
+.is-astrology .astro-method{font-size:12px;line-height:2.1;color:#a9bdd0}
+.is-astrology .astro-method summary{font-size:13px;font-weight:600}
+.is-astrology .astro-topic-grid h3{font-size:24px;font-weight:650}
+.is-astrology .astro-topic-grid p,.is-astrology .astro-comparison p{font-size:14px;font-weight:500;line-height:2.1;color:#afc0d4}
+.is-astrology .astro-comparison h3{font-size:30px;font-weight:650}
+.is-astrology .astro-comparison-kicker{font-size:9px}
+.is-astrology .astro-select-label,.is-astrology .astro-personal-tools label{font-size:11px}
+.is-astrology select{font-size:13px;font-weight:500}
+.is-astrology .astro-text-link,.is-astrology .astro-remember{font-size:12px;font-weight:600}
+.is-astrology .astro-reading-grid h3{font-size:26px;font-weight:650;text-shadow:0 2px #1b283e}
+.is-astrology .astro-reading-grid p{font-size:14px;font-weight:500;line-height:2.1;color:#b4c4d6}
+.is-astrology .astro-reading-number{font-size:9px}
+.is-astrology .astro-months button{font-size:13px;font-weight:650;min-height:44px}
+.is-astrology .astro-months button span{font-size:9px}
+.is-astrology .astro-month-content h3{font-size:33px;font-weight:650;text-shadow:0 2px #1c2a40}
+.is-astrology .astro-month-guidance{font-size:15px;font-weight:500;line-height:2.1}
+.is-astrology .astro-month-date{font-size:10px}
+.is-astrology .astro-month-action>span{font-size:11px;font-weight:600}
+.is-astrology .astro-month-action p{font-size:13px;line-height:2.1}
+.is-astrology .astro-month-counter{font-size:11px}
+.is-astrology .astro-month-controls button{height:44px;width:44px}
+.is-astrology .astro-compass-quote{font-size:27px;font-weight:600}
+.is-astrology .astro-compass-quote>span{font-size:9px}
+.is-astrology .detail-footer h2{font-size:26px;font-weight:650}
+.is-astrology .detail-footer>div>p{font-size:9px}
+.is-astrology .detail-footer .project-actions button{font-size:12px;font-weight:600}
+.is-astrology .project-close span{font-size:11px;font-weight:600}
+.is-astrology .detail-breadcrumb{font-size:10px}
+.is-astrology .detail-chapters button{font-size:11px;font-weight:600}
+
+/* Luminescent constellation lines, travelling highlights and a gentle drift. */
+.is-astrology .journey-opening .astro-constellation{color:rgba(var(--star-color),.98)}
+.astro-constellation svg{width:88px;height:80px;stroke-width:1.7;filter:drop-shadow(0 0 4px rgba(var(--star-color),.5));animation:astro-constellation-float 7s ease-in-out infinite alternate;animation-delay:var(--star-delay)}
+.constellation-link{opacity:.65}
+.constellation-trail{stroke-width:3;stroke-dasharray:.15 .85;stroke-dashoffset:1;opacity:.95;animation:astro-constellation-trace 6s linear infinite;animation-delay:var(--star-delay)}
+.constellation-aura{opacity:.16;transform-box:fill-box;transform-origin:center;animation:astro-aura-breathe 3.7s ease-in-out infinite alternate;animation-delay:var(--star-delay)}
+.constellation-star{filter:drop-shadow(0 0 5px currentColor)}
+.constellation-label{font-size:11px;font-weight:650;color:#d3def0}
+.constellation-label i{font-size:20px;text-shadow:0 0 9px rgba(var(--star-color),.45)}
+.astro-constellation:hover svg,.astro-constellation:focus-visible svg{filter:drop-shadow(0 0 8px rgba(var(--star-color),.75)) brightness(1.2)}
+@keyframes astro-constellation-float{to{transform:translateY(-4px) rotate(3deg)}}
+@keyframes astro-constellation-trace{to{stroke-dashoffset:-1}}
+@keyframes astro-aura-breathe{to{opacity:.28;transform:scale(1.25)}}
+.is-paused .astro-constellation svg,.is-paused .constellation-trail,.is-paused .constellation-aura,
+.is-site-paused .astro-constellation svg,.is-site-paused .constellation-trail,.is-site-paused .constellation-aura,
+.journey-opening[aria-hidden="true"] .astro-constellation svg,.journey-opening[aria-hidden="true"] .constellation-trail,.journey-opening[aria-hidden="true"] .constellation-aura{animation-play-state:paused}
+
+@media(max-width:1000px){
+ .is-astrology .astro-home-picker{width:min(430px,90vw)}
+ .is-astrology .detail-lead{font-size:24px}
+ .is-astrology .project-intro{font-size:13px}
+ .is-astrology .astro-topic-grid article{padding:22px}
+}
+@media(max-width:700px){
+ .is-astrology .header .brand{font-size:11px}
+ .is-astrology .header .nav-link,.is-astrology .about-trigger{font-size:9px}
+ .is-astrology .header nav{gap:10px;padding:10px 11px}
+ .is-astrology .cover-kicker{font-size:8px;letter-spacing:.035em}
+ .is-astrology .cover-copy{font-size:11px;letter-spacing:.035em}
+ .is-astrology .journey-opening h2 .astro-heading-subtitle{font-size:27px;letter-spacing:.22em}
+ .is-astrology .astro-home-picker select{font-size:12px!important;padding-inline:12px!important}
+ .is-astrology .astro-home-picker button{font-size:10px;padding-inline:14px}
+ .is-astrology .cover-enter,.is-astrology .cover-actions .cover-tour{font-size:10px}
+ .is-astrology .cover-coordinate{font-size:7px}
+ .is-astrology .screen-copy h2,.is-astrology .chapter-screen .screen-copy h2{font-size:clamp(40px,13vw,54px);margin-block:19px 14px}
+ .is-astrology .screen-copy p{font-size:14px}
+ .is-astrology .screen-imprint,.is-astrology .screen-serial{font-size:8px}
+ .is-astrology .screen-caption{font-size:10px;max-width:81%}
+ .is-astrology .world-choice>span{font-size:8px;letter-spacing:0}
+ .is-astrology .world-choice{padding-inline:3px}
+ .is-astrology .world-selector:before{font-size:7px}
+ .is-astrology .gallery-guidance,.is-astrology .hero[data-phase="arrival"] .gallery-guidance{font-size:7px;max-width:90%;white-space:normal;text-align:center;line-height:1.8}
+ .is-astrology .gallery-story-link{font-size:10px}
+ .is-astrology .music-track>span{font-size:10px}
+ .is-astrology .music-track small,.is-astrology .music-state{font-size:7px}
+ .is-astrology .hero-bottom .sky-toggle{font-size:8px}
+ .is-astrology #project-title{font-size:44px}
+ .is-astrology #project-dialog[data-sign="sagittarius"] #project-title{font-size:32px}
+ .is-astrology .project-subtitle{font-size:14px;letter-spacing:.08em}
+ .is-astrology .detail-lead{font-size:23px}
+ .is-astrology .project-intro{font-size:13px}
+ .is-astrology .detail-facts strong{font-size:11px}
+ .is-astrology .detail-facts span{font-size:8px}
+ .is-astrology .detail-visual-caption{font-size:10px}
+ .is-astrology .detail-visual-tag{font-size:7px}
+ .is-astrology .project-kicker{font-size:9px;letter-spacing:.04em}
+ .is-astrology .detail-section-heading h2{font-size:29px}
+ .is-astrology .detail-section-heading>p{font-size:9px}
+ .is-astrology .detail-section-heading>span{font-size:12px}
+ .is-astrology .astro-sign-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+ .is-astrology .astro-sign-card.is-compact{min-height:178px;padding:18px 14px}
+ .is-astrology .is-compact h3{font-size:19px}
+ .is-astrology .astro-sign-card h3{font-size:24px}
+ .is-astrology .astro-sign-dates,.is-astrology .astro-sign-english{font-size:8px;letter-spacing:.02em}
+ .is-astrology .astro-element-note p{font-size:20px}
+ .is-astrology .astro-reading-grid h3,.is-astrology .astro-topic-grid h3{font-size:24px}
+ .is-astrology .astro-comparison h3{font-size:27px}
+ .is-astrology .astro-personal-tools label{font-size:10px}
+ .is-astrology .astro-personal-tools select{font-size:12px}
+ .is-astrology .astro-remember{font-size:10px;padding-inline:11px}
+ .is-astrology .astro-month-content h3{font-size:28px}
+ .is-astrology .astro-month-guidance{font-size:14px}
+ .is-astrology .astro-month-date{font-size:9px}
+ .is-astrology .astro-month-action p{font-size:12px}
+ .is-astrology .astro-compass-quote{font-size:22px}
+ .is-astrology .astro-quarters h3{font-size:18px}
+ .is-astrology .astro-quarters article>span{font-size:8px}
+ .is-astrology .detail-footer h2{font-size:24px}
+ .is-astrology .detail-footer .project-actions button{font-size:10px}
+ .is-astrology .project-close span{font-size:10px}
+ .is-astrology .project-close{width:44px;height:44px;display:grid;place-items:center;top:10px;right:12px;padding:0}
+ .is-astrology .project-close span[aria-hidden="true"]{display:inline;font-size:20px;line-height:1}
+ .is-astrology .project-content{scroll-padding-top:78px}
+ .is-astrology .journey-ending h2{font-size:47px}
+ .astro-constellation svg{width:44px;height:40px;stroke-width:2}
+ .constellation-label{font-size:8px;gap:3px}
+ .constellation-label i{font-size:12px}
+ .is-astrology .journey-opening [data-home-sign="cancer"]{left:8%}
+ .is-astrology .journey-opening [data-home-sign="sagittarius"]{left:92%}
+}
+@media(max-width:360px){
+ .is-astrology .header nav{gap:7px;padding-inline:9px}
+ .is-astrology .header .nav-link,.is-astrology .about-trigger{font-size:8px}
+ .is-astrology .cover-kicker{font-size:7px}
+ .is-astrology .cover-copy{font-size:10px}
+ .is-astrology .world-choice>span{font-size:7px}
+ .is-astrology .world-choice>span:before{margin-right:2px}
+ .is-astrology .astro-remember{font-size:9px;padding-inline:9px}
+ .is-astrology .astro-sign-english{font-size:7px}
+}
+@media(max-height:650px) and (max-width:700px){
+ .is-astrology .journey-opening h2 .astro-heading-subtitle{font-size:23px;margin-top:12px}
+ .is-astrology .cover-kicker{font-size:7px}
+ .is-astrology .cover-copy{font-size:10px}
+ .astro-constellation svg{width:32px;height:27px}
+ .constellation-label{font-size:7px}
+ .constellation-label i{font-size:11px}
+ .is-astrology .journey-ending h2{font-size:38px}
+}
+@media(prefers-reduced-motion:reduce){
+ .astro-constellation svg,.constellation-trail,.constellation-aura{animation:none}
+}
+
+/* A compact opening keeps the complete controls available in phone landscape. */
+@media(max-height:600px) and (min-width:701px){
+ .is-astrology .header{height:70px}
+ .is-astrology .journey-opening{padding:70px 20px 75px}
+ .is-astrology .journey-opening h2{font-size:clamp(68px,16vh,94px);margin-bottom:8px}
+ .is-astrology .journey-opening h2 .astro-heading-subtitle{font-size:21px;margin-top:5px}
+ .is-astrology .cover-kicker{font-size:7px;margin-bottom:8px}
+ .is-astrology .cover-copy{font-size:10px;margin-bottom:8px}
+ .is-astrology .astro-home-picker{width:380px;margin-bottom:9px}
+ .is-astrology .astro-home-picker select{font-size:12px!important}
+ .is-astrology .astro-home-picker button{font-size:10px;padding:9px 14px}
+ .is-astrology .cover-enter,.is-astrology .cover-actions .cover-tour{font-size:9px;padding:8px 15px}
+ .is-astrology .cover-coordinate,.is-astrology .world-selector{display:none}
+ .is-astrology .hero[data-phase="arrival"] .gallery-guidance{display:none}
+ .is-astrology .journey-opening .astro-constellation{width:80px;height:64px}
+ .astro-constellation svg{width:48px;height:39px}
+ .constellation-label{font-size:9px;gap:6px}.constellation-label i{font-size:15px}
+ .is-astrology .journey-opening [data-home-sign="aries"]{left:8%;top:28%}
+ .is-astrology .journey-opening [data-home-sign="taurus"]{left:19%;top:28%}
+ .is-astrology .journey-opening [data-home-sign="gemini"]{left:8%;top:47%}
+ .is-astrology .journey-opening [data-home-sign="cancer"]{left:19%;top:47%}
+ .is-astrology .journey-opening [data-home-sign="leo"]{left:8%;top:69%}
+ .is-astrology .journey-opening [data-home-sign="virgo"]{left:19%;top:69%}
+ .is-astrology .journey-opening [data-home-sign="libra"]{left:81%;top:69%}
+ .is-astrology .journey-opening [data-home-sign="scorpio"]{left:92%;top:69%}
+ .is-astrology .journey-opening [data-home-sign="sagittarius"]{left:81%;top:47%}
+ .is-astrology .journey-opening [data-home-sign="capricorn"]{left:92%;top:47%}
+ .is-astrology .journey-opening [data-home-sign="aquarius"]{left:81%;top:28%}
+ .is-astrology .journey-opening [data-home-sign="pisces"]{left:92%;top:28%}
+ .is-astrology .screen-copy,.is-astrology .chapter-screen .screen-copy{top:48%}
+ .is-astrology .screen-copy h2,.is-astrology .chapter-screen .screen-copy h2{font-size:clamp(40px,11vh,58px);margin:12px 0 8px}
+ .is-astrology .screen-imprint{font-size:8px}.is-astrology .screen-copy p{font-size:13px}
+ .is-astrology .screen-caption{font-size:10px;bottom:22px}
+ .is-astrology .journey-ending{padding-block:75px 80px}
+ .is-astrology .journey-ending h2{font-size:40px;margin-bottom:16px}
+}
