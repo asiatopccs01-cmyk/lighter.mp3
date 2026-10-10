@@ -55,6 +55,7 @@ if(window.THREE){
 	CSS3DSprite.prototype.isCSS3DSprite = true; //
 
 	const _matrix = new THREE.Matrix4();
+	const _viewMatrix = new THREE.Matrix4();
 
 	class CSS3DRenderer {
 
@@ -112,7 +113,9 @@ if(window.THREE){
 
 				}
 
-				const cameraCSSMatrix = camera.isOrthographicCamera ? 'scale(' + fov + ')' + 'translate(' + epsilon( tx ) + 'px,' + epsilon( ty ) + 'px)' + getCameraCSSMatrix( camera.matrixWorldInverse ) : 'translateZ(' + fov + 'px)' + getCameraCSSMatrix( camera.matrixWorldInverse );
+				// Keep the parent plane in the viewport for reliable pointer hit testing.
+				// Camera rotation and perspective depth are applied to each card instead.
+				const cameraCSSMatrix = camera.isOrthographicCamera ? 'scale(' + fov + ')' + 'translate(' + epsilon( tx ) + 'px,' + epsilon( ty ) + 'px)' : '';
 				const style = cameraCSSMatrix + 'translate(' + _widthHalf + 'px,' + _heightHalf + 'px)';
 
 				if ( cache.camera.style !== style ) {
@@ -122,7 +125,7 @@ if(window.THREE){
 
 				}
 
-				renderObject( scene, scene, camera, cameraCSSMatrix );
+				renderObject( scene, scene, camera, fov );
 
 			};
 
@@ -155,12 +158,12 @@ if(window.THREE){
 			function getObjectCSSMatrix( matrix ) {
 
 				const elements = matrix.elements;
-				const matrix3d = 'matrix3d(' + epsilon( elements[ 0 ] ) + ',' + epsilon( elements[ 1 ] ) + ',' + epsilon( elements[ 2 ] ) + ',' + epsilon( elements[ 3 ] ) + ',' + epsilon( - elements[ 4 ] ) + ',' + epsilon( - elements[ 5 ] ) + ',' + epsilon( - elements[ 6 ] ) + ',' + epsilon( - elements[ 7 ] ) + ',' + epsilon( elements[ 8 ] ) + ',' + epsilon( elements[ 9 ] ) + ',' + epsilon( elements[ 10 ] ) + ',' + epsilon( elements[ 11 ] ) + ',' + epsilon( elements[ 12 ] ) + ',' + epsilon( elements[ 13 ] ) + ',' + epsilon( elements[ 14 ] ) + ',' + epsilon( elements[ 15 ] ) + ')';
+				const matrix3d = 'matrix3d(' + epsilon( elements[ 0 ] ) + ',' + epsilon( - elements[ 1 ] ) + ',' + epsilon( elements[ 2 ] ) + ',' + epsilon( elements[ 3 ] ) + ',' + epsilon( - elements[ 4 ] ) + ',' + epsilon( elements[ 5 ] ) + ',' + epsilon( - elements[ 6 ] ) + ',' + epsilon( - elements[ 7 ] ) + ',' + epsilon( elements[ 8 ] ) + ',' + epsilon( - elements[ 9 ] ) + ',' + epsilon( elements[ 10 ] ) + ',' + epsilon( elements[ 11 ] ) + ',' + epsilon( elements[ 12 ] ) + ',' + epsilon( - elements[ 13 ] ) + ',' + epsilon( elements[ 14 ] ) + ',' + epsilon( elements[ 15 ] ) + ')';
 				return 'translate(-50%,-50%)' + matrix3d;
 
 			}
 
-			function renderObject( object, scene, camera, cameraCSSMatrix ) {
+			function renderObject( object, scene, camera, fov ) {
 
 				if ( object.isCSS3DObject ) {
 
@@ -182,11 +185,15 @@ if(window.THREE){
 						_matrix.elements[ 7 ] = 0;
 						_matrix.elements[ 11 ] = 0;
 						_matrix.elements[ 15 ] = 1;
-						style = getObjectCSSMatrix( _matrix );
+						_viewMatrix.multiplyMatrices( camera.matrixWorldInverse, _matrix );
+						if ( camera.isPerspectiveCamera ) _viewMatrix.elements[ 14 ] += fov;
+						style = getObjectCSSMatrix( _viewMatrix );
 
 					} else {
 
-						style = getObjectCSSMatrix( object.matrixWorld );
+						_viewMatrix.multiplyMatrices( camera.matrixWorldInverse, object.matrixWorld );
+						if ( camera.isPerspectiveCamera ) _viewMatrix.elements[ 14 ] += fov;
+						style = getObjectCSSMatrix( _viewMatrix );
 
 					}
 
@@ -217,7 +224,7 @@ if(window.THREE){
 
 				for ( let i = 0, l = object.children.length; i < l; i ++ ) {
 
-					renderObject( object.children[ i ], scene, camera, cameraCSSMatrix );
+					renderObject( object.children[ i ], scene, camera, fov );
 
 				}
 

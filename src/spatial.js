@@ -292,7 +292,16 @@
     if(!force&&initializationAttempted&&width===root.clientWidth&&height===root.clientHeight)return;
     const previousStep=step,previousProgress=scrollY/previousStep+start;
     // Read card sizes before changing styles to avoid per-frame layout flushes.
-    screens.forEach((screen,i)=>screenWidths[i]=screen.clientWidth);
+    screens.forEach((screen,i)=>{
+      // CSS3DRenderer hides distant cards with display:none; their clientWidth is zero.
+      // Measure the responsive CSS width during resize so they re-enter at normal scale.
+      const style=getComputedStyle(screen);
+      const cssWidth=parseFloat(style.width);
+      const borders=(parseFloat(style.borderLeftWidth)||0)+(parseFloat(style.borderRightWidth)||0);
+      const padding=(parseFloat(style.paddingLeft)||0)+(parseFloat(style.paddingRight)||0);
+      const measured=style.boxSizing==='border-box'?cssWidth-borders:cssWidth+padding;
+      screenWidths[i]=screen.clientWidth||(measured>0?measured:screenWidths[i])||Math.max(1,root.clientWidth*.64);
+    });
     width=root.clientWidth;height=root.clientHeight;step=height*(width<700?1.3:1.45);
     track.style.height=`${step*(finish-start)+height}px`;
     if(Math.abs(previousStep-step)>.1)scrollTo({top:(previousProgress-start)*step,behavior:'instant'});
