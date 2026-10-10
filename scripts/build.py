@@ -1,6 +1,5 @@
-"""Build the self-contained GitHub Pages entry from editable source files."""
+"""Build the GitHub Pages entry from editable source files."""
 from pathlib import Path
-import base64
 import re
 
 repository = Path(__file__).resolve().parents[1]
@@ -15,9 +14,9 @@ for name in ('arrival.js', 'assets/three.min.js', 'assets/CSS3DRenderer.js', 'as
     code = (source / name).read_text()
     assert '</script' not in code.lower(), name
     html = html.replace(f'<script src="{name}"></script>', '<script>\n' + code + '\n</script>')
-for name, mime in (('assets/moon-sea.mp3', 'audio/mpeg'), ('assets/aether.png', 'image/png')):
-    data = base64.b64encode((source / name).read_bytes()).decode()
-    html = html.replace(f'src="{name}"', f'src="data:{mime};base64,{data}"')
+# Keep large media out of the entry document; audio loads only after a click.
+for name in ('assets/moon-sea.mp3', 'assets/aether.png'):
+    html = html.replace(f'src="{name}"', f'src="src/{name}"')
 assert not re.search(r'<script[^>]+src=|<link[^>]+rel="stylesheet"|src="assets/', html)
 (repository / 'index.html').write_text(html)
 print(f'Built index.html: {len(html.encode()):,} bytes')

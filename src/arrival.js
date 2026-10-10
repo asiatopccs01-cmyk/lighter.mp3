@@ -5,7 +5,7 @@
   const number=loader.querySelector('.arrival-percent'),bar=loader.querySelector('.arrival-progress');
   const reduced=matchMedia('(prefers-reduced-motion: reduce)');
   const started=performance.now(),milestones=new Map(),inertState=new Map();
-  let target=0,displayed=0,frame=0,releasing=false,finished=false,releaseTimer,scriptMarks=0;
+  let target=0,displayed=0,frame=0,releasing=false,finished=false,releaseTimer,scriptMarks=0,lastPaint=0;
   let resolveReady;const ready=new Promise(resolve=>resolveReady=resolve);
   window.ArrivalGate={ready,get active(){return !finished;}};
   loader.hidden=false;document.documentElement.classList.add('is-arriving');
@@ -16,8 +16,8 @@
   function drawContours(time){
     paths.forEach((path,i)=>{
       let d='';
-      for(let j=0;j<=168;j++){
-        const angle=j/168*Math.PI*2;
+      for(let j=0;j<=96;j++){
+        const angle=j/96*Math.PI*2;
         const radius=155+i*13+(30+i*2.5)*Math.cos(angle*4)+12*Math.cos(angle*8)*Math.sin(time*.55+i*.25);
         const x=Math.cos(angle)*radius*(1.27+i*.035),y=Math.sin(angle)*radius*.91;
         d+=(j?'L':'M')+x.toFixed(2)+' '+y.toFixed(2);
@@ -28,6 +28,7 @@
   }
   function render(now){
     frame=0;if(finished)return;
+    if(now-lastPaint<32){if(!document.hidden)frame=requestAnimationFrame(render);return;}lastPaint=now;
     displayed+=(target-displayed)*.13;if(target===100&&displayed>99.2)displayed=100;
     const value=Math.floor(displayed);number.textContent=String(value).padStart(2,'0');bar.setAttribute('aria-valuenow',String(value));
     if(!reduced.matches)drawContours((now-started)/1000);

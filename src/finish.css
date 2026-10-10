@@ -231,3 +231,95 @@
  .is-astrology .journey-ending{padding-block:75px 80px}
  .is-astrology .journey-ending h2{font-size:40px;margin-bottom:16px}
 }
+
+/* Mobile comfort and lower-cost compositing, including Android and iOS. */
+.is-project-open .hero *{animation-play-state:paused!important}
+.journey-opening[aria-hidden="true"] .astro-atmosphere *,
+.journey-opening[aria-hidden="true"] .astro-zodiac-halo,
+.journey-opening[aria-hidden="true"] .constellation-star{animation-play-state:paused}
+@media(max-width:700px),(pointer:coarse) and (max-width:1100px){
+ .is-astrology select,.is-astrology .astro-home-picker select,
+ .is-astrology .astro-personal-tools select{font-size:16px!important;min-height:44px}
+ .is-astrology .hero{touch-action:pan-y pinch-zoom}
+ .is-astrology .header{padding-top:env(safe-area-inset-top,0px)}
+ .is-astrology .music-dock{bottom:max(18px,env(safe-area-inset-bottom,0px))}
+ .is-astrology .hero-bottom{bottom:max(23px,env(safe-area-inset-bottom,0px))}
+ .is-astrology #project-dialog{transform:none;box-shadow:0 12px 40px #0006}
+ .is-astrology #project-dialog::backdrop{backdrop-filter:none;background:#030711d9}
+ .is-astrology .project-content{overscroll-behavior-y:contain;touch-action:pan-y pinch-zoom;-webkit-overflow-scrolling:touch;padding-bottom:max(30px,env(safe-area-inset-bottom,0px))}
+ .is-astrology .astro-nebula{animation:none;inset:0}
+ .is-astrology .constellation-star{filter:none;animation-timing-function:steps(12)}
+ .is-astrology .constellation-aura{animation:none;opacity:.2}
+ .is-astrology .constellation-trail{animation-timing-function:steps(24)}
+ .is-astrology .astro-bright-stars{filter:none;animation-timing-function:steps(12)}
+ .is-astrology .astro-constellation svg{filter:drop-shadow(0 0 3px rgba(var(--star-color),.45))}
+ .is-astrology .helix-dom .floating-screen,
+ .is-astrology .helix-dom .floating-screen.is-front{box-shadow:inset 0 0 0 1px rgba(var(--pane-primary),.08),0 12px 24px #0004}
+ .is-astrology .screen-copy h2{filter:none;text-shadow:0 2px #111c32}
+ .is-astrology .journey-cover button,.is-astrology .header nav,
+ .is-astrology .music-dock,.is-astrology .sky-toggle,.is-astrology .tour-control{backdrop-filter:none}
+ .is-astrology .detail-chapters button{height:44px;min-width:30px}
+ .is-astrology .detail-bar{height:68px}
+ .is-astrology .detail-scroll-progress{top:67px}
+ .is-astrology .astro-remember{min-height:44px}
+}
+@media(max-width:360px){
+ .is-astrology .astro-home-picker{gap:6px;width:92vw}
+ .is-astrology .astro-home-picker select{padding-inline:10px!important}
+ .is-astrology .astro-home-picker button{padding-inline:10px}
+ .is-astrology .detail-chapters{gap:0}
+ .is-astrology .detail-chapters button{min-width:28px}
+}
+/* Two clean arcs keep all twelve tap targets clear on short, narrow phones. */
+@media(max-width:700px) and (max-height:650px){
+ .is-astrology .journey-opening{padding-top:105px}
+ .is-astrology .journey-opening [data-home-sign]{top:112px;width:48px;height:44px}
+ .is-astrology .journey-opening [data-home-sign="aries"],
+ .is-astrology .journey-opening [data-home-sign="libra"]{left:8.333%}
+ .is-astrology .journey-opening [data-home-sign="taurus"],
+ .is-astrology .journey-opening [data-home-sign="scorpio"]{left:25%}
+ .is-astrology .journey-opening [data-home-sign="gemini"],
+ .is-astrology .journey-opening [data-home-sign="sagittarius"]{left:41.667%}
+ .is-astrology .journey-opening [data-home-sign="cancer"],
+ .is-astrology .journey-opening [data-home-sign="capricorn"]{left:58.333%}
+ .is-astrology .journey-opening [data-home-sign="leo"],
+ .is-astrology .journey-opening [data-home-sign="aquarius"]{left:75%}
+ .is-astrology .journey-opening [data-home-sign="virgo"],
+ .is-astrology .journey-opening [data-home-sign="pisces"]{left:91.667%}
+ .is-astrology .journey-opening [data-home-sign="libra"],
+ .is-astrology .journey-opening [data-home-sign="scorpio"],
+ .is-astrology .journey-opening [data-home-sign="sagittarius"],
+ .is-astrology .journey-opening [data-home-sign="capricorn"],
+ .is-astrology .journey-opening [data-home-sign="aquarius"],
+ .is-astrology .journey-opening [data-home-sign="pisces"]{top:calc(100% - 100px)}
+ .is-astrology .hero[data-phase="arrival"] .gallery-guidance{bottom:70px}
+}
+@media(max-width:700px) and (min-height:651px){
+ .is-astrology .journey-opening [data-home-sign="cancer"],
+ .is-astrology .journey-opening [data-home-sign="sagittarius"]{top:66%}
+}
+@media(pointer:coarse) and (max-width:1100px){
+ .is-astrology .project-close{min-width:44px;min-height:44px}
+ .is-astrology .music-play,.is-astrology .music-volume-toggle{min-width:44px;min-height:44px}
+}
+@media(max-width:700px){
+ .is-astrology .hero-bottom{left:15px;height:44px}
+ .is-astrology .hero-bottom .sky-toggle{min-height:44px}
+ .is-astrology .hero-bottom .world-controls{bottom:80px}
+}
+@media(max-width:375px){
+ .is-astrology .hero-bottom{left:12px}
+ .is-astrology .hero-bottom .sky-toggle{width:44px;min-width:44px;height:44px;padding:0;justify-content:center}
+ .is-astrology .hero-bottom .sky-toggle-text{display:none}
+}
+@media(max-width:700px) and (max-height:650px){
+ .is-astrology .journey-opening [data-home-sign="libra"],
+ .is-astrology .journey-opening [data-home-sign="scorpio"],
+ .is-astrology .journey-opening [data-home-sign="sagittarius"],
+ .is-astrology .journey-opening [data-home-sign="capricorn"],
+ .is-astrology .journey-opening [data-home-sign="aquarius"],
+ .is-astrology .journey-opening [data-home-sign="pisces"]{top:calc(100% - 108px)}
+}
+@media(max-width:700px){
+ .is-astrology .hero-bottom .sky-toggle{display:flex}
+}
