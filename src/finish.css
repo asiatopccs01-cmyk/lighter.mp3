@@ -323,3 +323,20 @@
 @media(max-width:700px){
  .is-astrology .hero-bottom .sky-toggle{display:flex}
 }
+
+/* Opaque chapter ink remains vivid inside Android's transformed glass layers. */
+.is-astrology .screen-copy h2,
+.is-astrology .chapter-screen .screen-copy h2{
+ background:none;
+ color:rgb(var(--pane-primary));
+ -webkit-text-fill-color:currentColor;
+ -webkit-text-stroke:0;
+ text-shadow:0 0 14px rgba(var(--pane-primary),.22);
+ filter:none;
+}
+.is-astrology .helix-dom .floating-screen{
+ background:linear-gradient(125deg,rgba(var(--pane-secondary),.23),#131b3838 50%,rgba(var(--pane-primary),.18));
+}
+.is-astrology .screen-copy p{color:#f1edf8}
+.is-astrology .screen-imprint{color:rgba(var(--pane-primary),.95)}
+.is-astrology .helix-dom [data-screen="6"]{--pane-primary:255,226,178;--pane-secondary:195,184,255}

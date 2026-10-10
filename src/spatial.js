@@ -268,7 +268,8 @@
     if(renderer){
       const outro=smooth(6.1,finish,progress);
       // Keep the opening's text and constellation maps clear; reveal the sculpture as the camera descends.
-      structure.visible=progress>-.65;structure.children[0].material.opacity=smooth(-.65,-.03,progress);
+      structure.visible=progress>-.65;structure.children[0].material.opacity=(handheld()?.16:.28)*smooth(-.65,-.03,progress);
+      structure.children[0].material.color.copy(key.color);
       structure.rotation.y=Math.sin(time*.12)*.04;structure.position.set(0,0,0);structure.rotation.z=0;
       shader.uniforms.uTime.value=time;shader.uniforms.uTravel.value=progress;
       shader.uniforms.uRotation.value=Math.sin(time*.08)*.02;

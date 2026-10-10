@@ -1070,6 +1070,23 @@ html{scroll-behavior:auto;scrollbar-color:#736781 #070a0e}
  .is-astrology .hero-bottom .sky-toggle{display:flex}
 }
 
+/* Opaque chapter ink remains vivid inside Android's transformed glass layers. */
+.is-astrology .screen-copy h2,
+.is-astrology .chapter-screen .screen-copy h2{
+ background:none;
+ color:rgb(var(--pane-primary));
+ -webkit-text-fill-color:currentColor;
+ -webkit-text-stroke:0;
+ text-shadow:0 0 14px rgba(var(--pane-primary),.22);
+ filter:none;
+}
+.is-astrology .helix-dom .floating-screen{
+ background:linear-gradient(125deg,rgba(var(--pane-secondary),.23),#131b3838 50%,rgba(var(--pane-primary),.18));
+}
+.is-astrology .screen-copy p{color:#f1edf8}
+.is-astrology .screen-imprint{color:rgba(var(--pane-primary),.95)}
+.is-astrology .helix-dom [data-screen="6"]{--pane-primary:255,226,178;--pane-secondary:195,184,255}
+
 </style>
 </head>
 <body>
@@ -2682,7 +2699,8 @@ function updateMotion(){document.body.classList.toggle('is-site-paused',!skyPlay
     if(renderer){
       const outro=smooth(6.1,finish,progress);
       // Keep the opening's text and constellation maps clear; reveal the sculpture as the camera descends.
-      structure.visible=progress>-.65;structure.children[0].material.opacity=smooth(-.65,-.03,progress);
+      structure.visible=progress>-.65;structure.children[0].material.opacity=(handheld()?.16:.28)*smooth(-.65,-.03,progress);
+      structure.children[0].material.color.copy(key.color);
       structure.rotation.y=Math.sin(time*.12)*.04;structure.position.set(0,0,0);structure.rotation.z=0;
       shader.uniforms.uTime.value=time;shader.uniforms.uTravel.value=progress;
       shader.uniforms.uRotation.value=Math.sin(time*.08)*.02;
